@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:resume_app/utils/routes.dart';
 
-void main(){
+void main() {
   runApp(const MyApp());
 }
 
@@ -16,4 +16,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
