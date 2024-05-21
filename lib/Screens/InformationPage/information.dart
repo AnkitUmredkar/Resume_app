@@ -18,13 +18,14 @@ class _InformationState extends State<Information> {
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              icon: const Icon(
-                Icons.arrow_back,
-                color: Colors.white,
-              )),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            ),
+          ),
           toolbarHeight: 70,
           backgroundColor: blueColor,
           title: const Text(
@@ -60,8 +61,13 @@ class _InformationState extends State<Information> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      buildColumn('assets/image/Categories/img_1.png',
-                          'Personal', width, height, 0),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushNamed('/PersonalInfo');
+                        },
+                        child: buildColumn('assets/image/Categories/img_1.png',
+                            'Personal', width, height, 0),
+                      ),
                       buildColumn('assets/image/Categories/img_2.png',
                           'Objective', width, height, 0),
                       buildColumn('assets/image/Categories/img_3.png',
@@ -76,7 +82,7 @@ class _InformationState extends State<Information> {
                       buildColumn('assets/image/Categories/img_5.png', 'Skills',
                           width, height, 0),
                       buildColumn('assets/image/Categories/img_6.png',
-                          'Language', width, height, 0),
+                          'Language', width, height, 13),
                     ],
                   ),
                   Row(
@@ -87,7 +93,7 @@ class _InformationState extends State<Information> {
                       buildColumn('assets/image/Categories/img_7.png',
                           'Achievement', width, height, 0),
                       buildColumn('assets/image/Categories/img_9.png', 'Social',
-                          width, height, 5.8),
+                          width, height, 5.5),
                     ],
                   ),
                   Row(
@@ -96,13 +102,13 @@ class _InformationState extends State<Information> {
                       buildColumn('assets/image/Categories/img_10.png',
                           'Projects', width, height, 6),
                       buildColumn('assets/image/Categories/img_11.png',
-                          'Interest', width, height, 0),
+                          'Interest', width, height, 5.5),
                       buildColumn('assets/image/Categories/img_12.png',
-                          'Strength', width, height, 2),
+                          'Strength', width, height, 5.5),
                     ],
                   ),
                   buildColumn('assets/image/Categories/img_13.png', 'Goal',
-                      width, height, 0),
+                      width, height, 6),
                 ],
               ),
             ),

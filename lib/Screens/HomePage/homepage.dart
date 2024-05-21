@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:resume_app/utils/global.dart';
 
@@ -107,7 +106,15 @@ class _HomePageState extends State<HomePage> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/Information');
+                  if(check == 1){
+                    Navigator.of(context).pushNamed('/Information');
+                  }
+                  if(check == 2){
+                    Navigator.of(context).pushNamed('/ViewResume');
+                  }
+                  if(check == 3){
+                    Navigator.of(context).pushNamed('/EditResume');
+                  }
                 },
                 child: Text(
                   buttonName,
