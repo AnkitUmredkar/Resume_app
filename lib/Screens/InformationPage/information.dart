@@ -15,27 +15,7 @@ class _InformationState extends State<Information> {
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            icon: const Icon(
-              Icons.arrow_back,
-              color: Colors.white,
-            ),
-          ),
-          toolbarHeight: 70,
-          backgroundColor: blueColor,
-          title: const Text(
-            'Create Resume',
-            style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'roboto',
-                letterSpacing: 0.9),
-          ),
-        ),
+        appBar: buildAppBar(context,'Create Resume'),
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(
@@ -67,8 +47,13 @@ class _InformationState extends State<Information> {
                         child: buildColumn('assets/image/Categories/img_1.png',
                             'Personal', width, height, 0),
                       ),
-                      buildColumn('assets/image/Categories/img_2.png',
-                          'Objective', width, height, 0),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.of(context).pushNamed('/ObjectiveInfo');
+                        },
+                        child: buildColumn('assets/image/Categories/img_2.png',
+                            'Objective', width, height, 0),
+                      ),
                       buildColumn('assets/image/Categories/img_3.png',
                           'Education', width, height, 0),
                     ],

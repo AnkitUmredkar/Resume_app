@@ -1,7 +1,8 @@
 import 'dart:io';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:resume_app/Screens/InformationPage/global.dart';
+import 'package:resume_app/Screens/InformationPage/Personal_Informtion/global.dart';
 import 'package:resume_app/utils/global.dart';
 
 ImagePicker imagePicker = ImagePicker();
@@ -56,26 +57,26 @@ class _PersonalInfoState extends State<PersonalInfo> {
                 letterSpacing: 0.9),
           ),
         ),
-        body: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(10, 22, 10, 10),
-            child: Container(
-              padding: const EdgeInsets.fromLTRB(15, 22, 15, 30),
-              width: width,
-              decoration: BoxDecoration(
-                color: const Color(0xffFAFAFA),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.grey,
-                    spreadRadius: 1,
-                    blurRadius: 9,
-                  ),
-                ],
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: Form(
-                key: formKey,
+        body: Form(
+          key: formKey,
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(10, 22, 10, 10),
+              child: Container(
+                padding: const EdgeInsets.fromLTRB(15, 22, 15, 30),
+                width: width,
+                decoration: BoxDecoration(
+                  color: const Color(0xffFAFAFA),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.grey,
+                      spreadRadius: 1,
+                      blurRadius: 9,
+                    ),
+                  ],
+                  borderRadius: BorderRadius.circular(30),
+                ),
                 child: Column(
                   children: [
                     GestureDetector(
@@ -178,10 +179,17 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     const SizedBox(
                       height: 5,
                     ),
-                    buildTextField(1, 'ex: Designer/Android Developer',
+                    buildTextFormField(1, 'ex: Designer/Android Developer',
                         TextInputType.text, width, jobTitleCtrl, (value) {
                       if (value!.isEmpty) {
-                        forEmptyField(context, 'JOB TITLE');
+                        forEmptyField(context, 'JOB TITLE Must be Required!');
+                        setState(() {
+                          ckJobTitle = false;
+                        });
+                      } else {
+                        setState(() {
+                          ckJobTitle = true;
+                        });
                       }
                     }),
                     const SizedBox(height: 13),
@@ -189,10 +197,17 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     const SizedBox(
                       height: 5,
                     ),
-                    buildTextField(1, 'ex: Your Name Full Name',
+                    buildTextFormField(1, 'ex: Your Name Full Name',
                         TextInputType.text, width, nameCtrl, (value) {
                       if (value!.isEmpty) {
-                        forEmptyField(context, 'NAME');
+                        forEmptyField(context, 'NAME Must be Required!');
+                        setState(() {
+                          ckName = false;
+                        });
+                      } else {
+                        setState(() {
+                          ckName = true;
+                        });
                       }
                     }),
                     const SizedBox(height: 13),
@@ -205,9 +220,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                         'ex: ShivDarshan Society, ParvatGam, Surat',
                         TextInputType.text,
                         width,
-                        addressCtrl, (value) {
-                      if (value == null) {}
-                    }),
+                        addressCtrl),
                     const SizedBox(height: 13),
                     text(width, 'ABOUT US'),
                     const SizedBox(height: 5),
@@ -216,26 +229,27 @@ class _PersonalInfoState extends State<PersonalInfo> {
                         'A Strong believer in the ability of the architecture and research of the design thinking for strengthening our societies',
                         TextInputType.text,
                         width,
-                        aboutUSCtrl, (value) {
-                      if (value == null) {}
-                    }),
+                        aboutUSCtrl),
                     const SizedBox(height: 13),
                     buildRow(width, 'CITY'),
                     const SizedBox(height: 5),
-                    buildTextField(
+                    buildTextFormField(
                         1, 'ex: Surat', TextInputType.text, width, cityCtrl,
                         (value) {
                       if (value!.isEmpty) {
-                        forEmptyField(context, 'CITY');
+                        forEmptyField(context, 'CITY Must be Required!');
+                        ckCity = false;
+                      } else {
+                        setState(() {
+                          ckCity = true;
+                        });
                       }
                     }),
                     const SizedBox(height: 13),
                     text(width, 'NATIONALITY'),
                     const SizedBox(height: 5),
                     buildTextField(1, 'ex: Indian', TextInputType.text, width,
-                        nationalityCtrl, (value) {
-                      if (value == null) {}
-                    }),
+                        nationalityCtrl),
                     const SizedBox(height: 13),
                     text(width, 'GENDER'),
                     const SizedBox(height: 5),
@@ -258,28 +272,55 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     const SizedBox(height: 13),
                     buildRow(width, 'EMAIL'),
                     const SizedBox(height: 5),
-                    buildTextField(1, 'ex: youremail@gmail.com',
+                    buildTextFormField(1, 'ex: youremail@gmail.com',
                         TextInputType.text, width, emailCtrl, (value) {
+                      bool checkCapital = false;
+                      bool checkSpeChar = false;
+                      for (int i = 0; i < value!.length; i++) {
+                        if (value[i] != value[i].toLowerCase()) {
+                          checkCapital = true;
+                        }
+                      }
+                      for (int i = 0; i < value.length; i++) {
+                        int charCode = value.codeUnitAt(i);
+                        if ((charCode >= 32 && charCode <= 45) ||
+                            (charCode == 47) ||
+                            (charCode >= 58 && charCode <= 63) ||
+                            (charCode >= 91 && charCode <= 96) ||
+                            (charCode >= 123 && charCode <= 126)) {
+                          checkSpeChar = true;
+                        }
+                      }
                       if (value!.isEmpty) {
-                        forEmptyField(context, 'EMAIL');
+                        forEmptyField(context, 'EMAIL Must be Required!');
+                        setState(() {
+                          ckEmail = false;
+                        });
+                      } else if (!value.contains('@gmail.com') ||
+                          value.contains(' ') ||
+                          value.length <= 10 ||
+                          checkCapital ||
+                          checkSpeChar) {
+                        forEmptyField(context, 'Entered Email Is Not Valid!');
+                        setState(() {
+                          ckEmail = false;
+                        });
+                      } else {
+                        setState(() {
+                          ckEmail = true;
+                        });
                       }
                     }),
                     const SizedBox(height: 13),
                     text(width, 'YEAR OF EXPERIENCE'),
                     const SizedBox(height: 5),
                     buildTextField(
-                        1, 'ex: 6', TextInputType.text, width, experienceCtrl,
-                        (value) {
-                      if (value == null) {}
-                    }),
+                        1, 'ex: 6', TextInputType.text, width, experienceCtrl),
                     const SizedBox(height: 13),
                     text(width, 'WEBSITE'),
                     const SizedBox(height: 5),
                     buildTextField(1, 'ex: http://yourwebsite.com/',
-                        TextInputType.text, width, websiteCtrl, (value) {
-                      if (value == null) {
-                      }
-                    }),
+                        TextInputType.text, width, websiteCtrl),
                     const SizedBox(height: 13),
                     text(width, "MARITIAL STATUS"),
                     const SizedBox(height: 5),
@@ -336,10 +377,23 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     const SizedBox(height: 13),
                     buildRow(width, "PHONE"),
                     const SizedBox(height: 5),
-                    buildTextField(1, "ex: 9328871876", TextInputType.number,
-                        width, phoneCtrl, (value) {
+                    buildTextFormField(1, "ex: 9328871876",
+                        TextInputType.number, width, phoneCtrl, (value) {
                       if (value!.isEmpty) {
-                        forEmptyField(context, 'PHONE');
+                        forEmptyField(
+                            context, 'PHONE NUMBER Must be Required!');
+                        setState(() {
+                          ckPhone = false;
+                        });
+                      } else if (value.length < 10) {
+                        forEmptyField(context, 'PHONE NUMBER Is Not Valid!');
+                        setState(() {
+                          ckPhone = false;
+                        });
+                      } else {
+                        setState(() {
+                          ckPhone = true;
+                        });
                       }
                     }),
                     const SizedBox(height: 28),
@@ -349,12 +403,20 @@ class _PersonalInfoState extends State<PersonalInfo> {
                         GestureDetector(
                           onTap: () {
                             setState(() {
-                              if (formKey.currentState!.validate()) {
+                              bool response = formKey.currentState!.validate();
+                              if (ckPhone &&
+                                  ckEmail &&
+                                  ckCity &&
+                                  ckName &&
+                                  ckJobTitle) {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
+                                        backgroundColor:
+                                            CupertinoColors.systemGreen,
                                         behavior: SnackBarBehavior.floating,
-                                        content:
-                                            Text('Data Saved Successfully')));
+                                        content: Text(
+                                            'Data Saved Successfully!',
+                                            style: TextStyle(fontSize: 16))));
                               }
                             });
                           },
@@ -403,6 +465,11 @@ class _PersonalInfoState extends State<PersonalInfo> {
                                           setState(() {
                                             gender = 'Male';
                                             marriage = '';
+                                            ckJobTitle = false;
+                                            ckName = false;
+                                            ckCity = false;
+                                            ckEmail = false;
+                                            ckPhone = false;
                                           });
                                           _clearAllFields();
                                           Navigator.pop(context);
@@ -501,5 +568,8 @@ ScaffoldFeatureController<SnackBar, SnackBarClosedReason> forEmptyField(
     BuildContext context, String data) {
   return ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       behavior: SnackBarBehavior.floating,
-      content: Text('$data Must be Required!')));
+      content: Text(
+        '$data',
+        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+      )));
 }

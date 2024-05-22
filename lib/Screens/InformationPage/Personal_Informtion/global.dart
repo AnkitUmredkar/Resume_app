@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
-import '../../utils/global.dart';
+import '../../../utils/global.dart';
+
+bool ckJobTitle = true,
+    ckName = true,
+    ckCity = true,
+    ckEmail = true,
+    ckPhone = true;
 
 String birthDate = '';
 String gender = 'Male';
@@ -25,7 +31,7 @@ OutlineInputBorder buildOutlineInputBorder(double borderWidth) {
   );
 }
 
-TextFormField buildTextField(
+TextFormField buildTextFormField(
   int maxLine,
   String label,
   var typeOfKeyboard,
@@ -45,6 +51,29 @@ TextFormField buildTextField(
         hintText: label,
         hintStyle:
             TextStyle(fontSize: width * 0.044, color: const Color(0xff666666))),
+  );
+}
+
+Container buildTextField(
+  int maxLine,
+  String label,
+  var typeOfKeyboard,
+  double width,
+  var controller,
+) {
+  return Container(
+    child: TextField(
+      keyboardType: typeOfKeyboard,
+      textInputAction: TextInputAction.next,
+      controller: controller,
+      maxLines: maxLine,
+      decoration: InputDecoration(
+          enabledBorder: buildOutlineInputBorder(1.5),
+          focusedBorder: buildOutlineInputBorder(2.5),
+          hintText: label,
+          hintStyle: TextStyle(
+              fontSize: width * 0.044, color: const Color(0xff666666))),
+    ),
   );
 }
 
