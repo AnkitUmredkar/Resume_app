@@ -21,16 +21,6 @@ ListTile options(String data, IconData icon) {
   );
 }
 
-OutlineInputBorder buildOutlineInputBorder(double borderWidth) {
-  return OutlineInputBorder(
-    borderRadius: BorderRadius.circular(32),
-    borderSide: BorderSide(
-      color: const Color(0xffA9A9A9),
-      width: borderWidth,
-    ),
-  );
-}
-
 TextFormField buildTextFormField(
   int maxLine,
   String label,
@@ -77,37 +67,6 @@ Container buildTextField(
   );
 }
 
-Row buildRow(double width, String data) {
-  return Row(
-    children: [
-      Text(
-        data,
-        style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.grey,
-            fontSize: width * 0.041),
-      ),
-      const Text(
-        ' *',
-        style: TextStyle(
-            color: Colors.red, fontWeight: FontWeight.bold, fontSize: 18),
-      ),
-    ],
-  );
-}
-
-Align text(double width, String data) {
-  return Align(
-    alignment: Alignment.centerLeft,
-    child: Text(
-      data,
-      style: TextStyle(
-          fontWeight: FontWeight.bold,
-          color: Colors.grey,
-          fontSize: width * 0.041),
-    ),
-  );
-}
 
 Container buttons(double width, String data) {
   return Container(

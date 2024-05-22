@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:resume_app/utils/global.dart';
 
 class Information extends StatefulWidget {
@@ -15,7 +16,7 @@ class _InformationState extends State<Information> {
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        appBar: buildAppBar(context,'Create Resume'),
+        appBar: buildAppBar(context, 'Create Resume'),
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(
@@ -48,14 +49,19 @@ class _InformationState extends State<Information> {
                             'Personal', width, height, 0),
                       ),
                       GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           Navigator.of(context).pushNamed('/ObjectiveInfo');
                         },
                         child: buildColumn('assets/image/Categories/img_2.png',
                             'Objective', width, height, 0),
                       ),
-                      buildColumn('assets/image/Categories/img_3.png',
-                          'Education', width, height, 0),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushNamed('/EducationInfo');
+                        },
+                        child: buildColumn('assets/image/Categories/img_3.png',
+                            'Education', width, height, 0),
+                      ),
                     ],
                   ),
                   Row(

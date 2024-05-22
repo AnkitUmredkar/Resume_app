@@ -563,13 +563,3 @@ List _controllers = [
   birthDateCtrl,
   phoneCtrl,
 ];
-
-ScaffoldFeatureController<SnackBar, SnackBarClosedReason> forEmptyField(
-    BuildContext context, String data) {
-  return ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-      behavior: SnackBarBehavior.floating,
-      content: Text(
-        '$data',
-        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-      )));
-}
