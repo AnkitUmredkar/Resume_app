@@ -125,7 +125,7 @@ Align text(double width, String data) {
       style: TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.grey,
-          fontSize: width * 0.041),
+          fontSize: width * 0.0415),
     ),
   );
 }
