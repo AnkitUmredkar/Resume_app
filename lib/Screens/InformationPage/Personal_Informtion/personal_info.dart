@@ -193,7 +193,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     buildTextFormField(1, 'ex: Your Name Full Name',
                         TextInputType.text, width, nameCtrl, (value) {
                       if (value!.isEmpty) {
-                        forEmptyField(context, 'NAME Must be Required!');
+                        forEmptyField(context, 'Fill All Required Field');
                         setState(() {
                           ckName = false;
                         });
@@ -222,7 +222,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                         1, 'ex: Surat', TextInputType.text, width, cityCtrl,
                         (value) {
                       if (value!.isEmpty) {
-                        forEmptyField(context, 'CITY Must be Required!');
+                        forEmptyField(context, 'Fill All Required Field');
                         ckCity = false;
                       } else {
                         setState(() {
@@ -271,7 +271,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                         }
                       }
                       if (value!.isEmpty) {
-                        forEmptyField(context, 'EMAIL Must be Required!');
+                        forEmptyField(context, 'Fill All Required Field');
                         setState(() {
                           ckEmail = false;
                         });
@@ -353,7 +353,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                         TextInputType.number, width, phoneCtrl, (value) {
                       if (value!.isEmpty) {
                         forEmptyField(
-                            context, 'PHONE NUMBER Must be Required!');
+                            context, 'Fill All Required Field');
                         setState(() {
                           ckPhone = false;
                         });

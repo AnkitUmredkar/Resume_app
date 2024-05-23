@@ -51,9 +51,9 @@ class _ExperienceInfoState extends State<ExperienceInfo> {
                             child: ListTile(
                                 leading: Text(
                                   'Experience ${index + 1}',
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 22,
+                                      fontSize: width * 0.0538,
                                       color: Colors.black),
                                 ),
                                 trailing: Row(
@@ -106,7 +106,7 @@ class _ExperienceInfoState extends State<ExperienceInfo> {
                                 buildtextFormField('ex:L&T pvt. ltd', width,
                                     expControllerList[index]['cmpNameCtrl'], (value) {
                                       if (value!.isEmpty) {
-                                        forEmptyField(context,'Company Name Must be Required!');
+                                        forEmptyField(context,'Fill All Required Fields');
                                         setState(() {
                                           Index = index;
                                           cmpNameisNotEmptyList[index] = false;
@@ -123,7 +123,7 @@ class _ExperienceInfoState extends State<ExperienceInfo> {
                                 buildtextFormField('ex:Flutter App Developer', width,
                                     expControllerList[index]['jobPositonCtrl'], (value) {
                                       if (value!.isEmpty) {
-                                        forEmptyField(context,'Job Position Must be Required!');
+                                        forEmptyField(context,'Fill All Required Fields');
                                         setState(() {
                                           Index = index;
                                           jobPositionisNotEmptyList[index] = false;

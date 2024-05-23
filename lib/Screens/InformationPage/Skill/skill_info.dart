@@ -45,9 +45,9 @@ class _SkillInfoState extends State<SkillInfo> {
                               child: ListTile(
                                   leading: Text(
                                     'Skill ${index + 1}',
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 22,
+                                        fontSize:width * 0.0538,
                                         color: Colors.black),
                                   ),
                                   trailing: Row(
@@ -125,16 +125,16 @@ class _SkillInfoState extends State<SkillInfo> {
             GestureDetector(
                 onTap: () {
                   setState(() {
-                    check = false;
+                    checkSkill = false;
                     for (int i = 0; i < skillCtrlList.length; i++) {
                       if (skillCtrlList[i].text.isEmpty) {
-                        check = true;
+                        checkSkill = true;
                         break;
                       }
                     }
-                    if (check) {
-                      forEmptyField(context, 'Skill Name Must be Required!');
-                    } else {
+                    if (checkSkill) {
+                      forEmptyField(context, 'Fill All Required Fields');
+                    } else if(checkSkill == false && skillCtrlList.isNotEmpty){
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           backgroundColor: Colors.green,
@@ -158,4 +158,4 @@ class _SkillInfoState extends State<SkillInfo> {
 }
 
 List skillCtrlList = [];
-bool check = false;
+bool checkSkill = false;

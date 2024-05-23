@@ -45,9 +45,9 @@ class _EducationInfoState extends State<EducationInfo> {
                       child: ListTile(
                           leading: Text(
                             'Education ${index + 1}',
-                            style: const TextStyle(
+                            style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 22,
+                                fontSize: width * 0.0538,
                                 color: Colors.black),
                           ),
                           trailing: Row(
@@ -100,7 +100,7 @@ class _EducationInfoState extends State<EducationInfo> {
                           buildtextFormField('ex:BCA', width,
                               txtControllerList[index]['courseCtrl'], (value) {
                                 if (value!.isEmpty) {
-                                  forEmptyField(context,'Degree/Course Name Must be Required!');
+                                  forEmptyField(context,'Fill All Required Fields');
                                   setState(() {
                                     Index = index;
                                     clgNameisNotEmptyList[index] = false;
@@ -117,7 +117,7 @@ class _EducationInfoState extends State<EducationInfo> {
                           buildtextFormField('ex:DRB College', width,
                               txtControllerList[index]['clgNameCtrl'], (value) {
                                 if (value!.isEmpty) {
-                                  forEmptyField(context,'College/Institue Name Must be Required!');
+                                  forEmptyField(context,'Fill All Required Fields');
                                   setState(() {
                                     Index = index;
                                     clgNameisNotEmptyList[index] = false;

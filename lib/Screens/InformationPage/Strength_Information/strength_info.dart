@@ -3,27 +3,27 @@ import 'package:resume_app/Screens/InformationPage/Education_Information/global.
 import 'package:resume_app/Screens/InformationPage/Personal_Informtion/global.dart';
 import 'package:resume_app/utils/global.dart';
 
-TextEditingController languageCtrl = TextEditingController();
-
-class LanguageInfo extends StatefulWidget {
-  const LanguageInfo({super.key});
+class StrengthInfo extends StatefulWidget {
+  const StrengthInfo({super.key});
 
   @override
-  State<LanguageInfo> createState() => _LanguageInfoState();
+  State<StrengthInfo> createState() => _StrengthInfoState();
 }
 
-class _LanguageInfoState extends State<LanguageInfo> {
+class _StrengthInfoState extends State<StrengthInfo> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
-        appBar: buildAppBar(context, 'Language Details'),
+        appBar: buildAppBar(context, 'Strength Details'),
         body: SingleChildScrollView(
-          child: Column(children: List.generate(
-              languageCtrlList.length,
-              (index) => Padding(
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            children: List.generate(
+              strengthCtrlList.length,
+                  (index) => Padding(
                 padding: const EdgeInsets.fromLTRB(12, 16, 12, 0),
                 child: Column(
                   children: [
@@ -42,7 +42,7 @@ class _LanguageInfoState extends State<LanguageInfo> {
                       ),
                       child: ListTile(
                           leading: Text(
-                            'Language ${index + 1}',
+                            'Strength ${index + 1}',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: width * 0.0538,
@@ -55,7 +55,7 @@ class _LanguageInfoState extends State<LanguageInfo> {
                               IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    languageCtrlList.removeAt(index);
+                                    strengthCtrlList.removeAt(index);
                                   });
                                 },
                                 icon: const Icon(Icons.delete,
@@ -95,8 +95,8 @@ class _LanguageInfoState extends State<LanguageInfo> {
                       child: Column(
                         children: [
                           buildRow(width, 'NAME'),
-                          textField(
-                              'ex:English', width, languageCtrlList[index]),
+                          textField('ex:Dedication', width,
+                              strengthCtrlList[index]),
                         ],
                       ),
                     ),
@@ -112,9 +112,8 @@ class _LanguageInfoState extends State<LanguageInfo> {
             GestureDetector(
                 onTap: () {
                   setState(() {
-                    TextEditingController languageCtrl =
-                        TextEditingController();
-                    languageCtrlList.add(languageCtrl);
+                    TextEditingController interestCtrl = TextEditingController();
+                    strengthCtrlList.add(interestCtrl);
                   });
                 },
                 child: button(width, 'Add', Icons.add)),
@@ -124,16 +123,16 @@ class _LanguageInfoState extends State<LanguageInfo> {
             GestureDetector(
                 onTap: () {
                   setState(() {
-                    checkLanguage = false;
-                    for (int i = 0; i < languageCtrlList.length; i++) {
-                      if (languageCtrlList[i].text.isEmpty) {
-                        checkLanguage = true;
+                    checkStreng = false;
+                    for (int i = 0; i < strengthCtrlList.length; i++) {
+                      if (strengthCtrlList[i].text.isEmpty) {
+                        checkStreng = true;
                         break;
                       }
                     }
-                    if (checkLanguage) {
+                    if (checkStreng) {
                       forEmptyField(context, 'Fill All Required Fields');
-                    } else if(checkLanguage == false && languageCtrlList.isNotEmpty){
+                    } else if(checkStreng == false && strengthCtrlList.isNotEmpty){
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           backgroundColor: Colors.green,
@@ -156,5 +155,5 @@ class _LanguageInfoState extends State<LanguageInfo> {
   }
 }
 
-List languageCtrlList = [];
-bool checkLanguage = false;
+List strengthCtrlList = [];
+bool checkStreng = false;

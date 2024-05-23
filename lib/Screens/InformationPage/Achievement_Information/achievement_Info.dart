@@ -47,7 +47,7 @@ class _AchievementInfoState extends State<AchievementInfo> {
                             'Achievement ${index + 1}',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: width * 0.054,
+                                fontSize: width * 0.0538,
                                 color: Colors.black),
                           ),
                           trailing: Row(
@@ -167,17 +167,17 @@ class _AchievementInfoState extends State<AchievementInfo> {
             GestureDetector(
                 onTap: () {
                   setState(() {
-                    check = false;
+                    checkAchievement = false;
                     for (int i = 0; i < awardCtrlList.length; i++) {
                       if (awardCtrlList[i]['awardNameCtrl'].text.isEmpty ||
                           awardCtrlList[i]['dateCtrl'].text.isEmpty) {
-                        check = true;
+                        checkAchievement = true;
                         break;
                       }
                     }
-                    if (check) {
-                      forEmptyField(context, 'Name And Year Must be Required!');
-                    } else {
+                    if (checkAchievement) {
+                      forEmptyField(context, 'Fill All Required Fields');
+                    } else if(checkAchievement == false && awardCtrlList.isNotEmpty){
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           backgroundColor: Colors.green,
@@ -201,5 +201,5 @@ class _AchievementInfoState extends State<AchievementInfo> {
 }
 
 List awardCtrlList = [], dateList = [];
-bool check = false;
+bool checkAchievement = false;
 String Date = '';

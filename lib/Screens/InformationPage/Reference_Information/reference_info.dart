@@ -44,9 +44,9 @@ class _ReferenceInfoState extends State<ReferenceInfo> {
                         child: ListTile(
                             leading: Text(
                               'Reference ${index + 1}',
-                              style: const TextStyle(
+                              style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 22,
+                                  fontSize:width * 0.0538,
                                   color: Colors.black),
                             ),
                             trailing: Row(
@@ -107,7 +107,7 @@ class _ReferenceInfoState extends State<ReferenceInfo> {
                             text(width, 'REFERENCE EMAIL'),
                             textField('ex:referenceemail@gmail.com', width,
                                 rfrCtrlList[index]['rfrEmailCtrl']),
-                            text(width, 'REFERENCE PHONE NUMBER'),
+                            buildRow(width, 'REFERENCE PHONE NUMBER'),
                             textField('9328871876', width,
                                 rfrCtrlList[index]['rfrPhoneCtrl']),
                           ],
@@ -147,16 +147,16 @@ class _ReferenceInfoState extends State<ReferenceInfo> {
             GestureDetector(
                 onTap: () {
                   setState(() {
-                    check = false;
+                    checkReference = false;
                     for (int i = 0; i < rfrCtrlList.length; i++) {
                       if (rfrCtrlList[i]['rfrNameCtrl'].text.isEmpty || rfrCtrlList[i]['rfrPhoneCtrl'].text.isEmpty) {
-                        check = true;
+                        checkReference = true;
                         break;
                       }
                     }
-                    if (check) {
-                      forEmptyField(context, 'Reference Name OR Phone Number Must be Required!');
-                    } else {
+                    if (checkReference) {
+                      forEmptyField(context, 'Fill All Required Fields');
+                    } else if(checkReference == false && rfrCtrlList.isNotEmpty){
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           backgroundColor: Colors.green,
@@ -181,4 +181,4 @@ class _ReferenceInfoState extends State<ReferenceInfo> {
 //--------------------------------->TODO Global Variable
 
 List rfrCtrlList = [];
-bool check = false,checkNumber = false;
+bool checkReference = false,checkNumber = false;
