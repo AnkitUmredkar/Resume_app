@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:resume_app/utils/global.dart';
 
@@ -45,13 +46,18 @@ class _HomePageState extends State<HomePage> {
                       1),
                 ),
                 const SizedBox(height: 20),
-                buildContainer(
-                    width,
-                    'View Resume',
-                    'Many HR approved templates, you\n can change color theme and text\nsizing according to your job need',
-                    'View',
-                    'assets/image/img_2.png',
-                    2),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.of(context).pushNamed('/pdf');
+                  },
+                  child: buildContainer(
+                      width,
+                      'View Resume',
+                      'Many HR approved templates, you\n can change color theme and text\nsizing according to your job need',
+                      'View',
+                      'assets/image/img_2.png',
+                      2),
+                ),
                 const SizedBox(height: 20),
                 buildContainer(
                     width,

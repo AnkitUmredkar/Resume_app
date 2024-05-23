@@ -15,6 +15,7 @@ import 'package:resume_app/Screens/InformationPage/Strength_Information/strength
 import 'package:resume_app/Screens/InformationPage/information.dart';
 import 'package:resume_app/Screens/ViewResume/EditResume/edit_resume.dart';
 import 'package:resume_app/Screens/ViewResume/view_resume.dart';
+import 'package:resume_app/Screens/pdf/pdf_Screen.dart';
 
 class AppRoutes {
   static Map<String, Widget Function(BuildContext)> routes = {
@@ -34,5 +35,6 @@ class AppRoutes {
     '/ProjectInfo' : (context) => const ProjectInfo(),
     '/InterestInfo' : (context) => const InterestInfo(),
     '/StrengthInfo' : (context) => const StrengthInfo(),
+    '/pdf' : (context) => const pdfScreen(),
   };
 }
