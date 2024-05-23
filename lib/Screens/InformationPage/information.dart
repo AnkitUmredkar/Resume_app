@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:resume_app/utils/global.dart';
@@ -69,17 +70,32 @@ class _InformationState extends State<Information> {
                     children: [
                       buildColumn('assets/image/Categories/img_4.png',
                           'Experience', width, height, 0),
-                      buildColumn('assets/image/Categories/img_5.png', 'Skills',
-                          width, height, 0),
-                      buildColumn('assets/image/Categories/img_6.png',
-                          'Language', width, height, 13),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushNamed('/SkillInfo');
+                        },
+                        child: buildColumn('assets/image/Categories/img_5.png',
+                            'Skills', width, height, 0),
+                      ),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.of(context).pushNamed('/LanguageInfo');
+                        },
+                        child: buildColumn('assets/image/Categories/img_6.png',
+                            'Language', width, height, 13),
+                      ),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      buildColumn('assets/image/Categories/img_8.png',
-                          'Reference', width, height, 6),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.of(context).pushNamed('/ReferenceInfo');
+                        },
+                        child: buildColumn('assets/image/Categories/img_8.png',
+                            'Reference', width, height, 6),
+                      ),
                       buildColumn('assets/image/Categories/img_7.png',
                           'Achievement', width, height, 0),
                       buildColumn('assets/image/Categories/img_9.png', 'Social',

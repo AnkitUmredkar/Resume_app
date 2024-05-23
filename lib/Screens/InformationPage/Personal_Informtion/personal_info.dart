@@ -176,9 +176,6 @@ class _PersonalInfoState extends State<PersonalInfo> {
                       ),
                     ),
                     buildRow(width, 'JOB TITLE'),
-                    const SizedBox(
-                      height: 5,
-                    ),
                     buildTextFormField(1, 'ex: Designer/Android Developer',
                         TextInputType.text, width, jobTitleCtrl, (value) {
                       if (value!.isEmpty) {
@@ -192,11 +189,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                         });
                       }
                     }),
-                    const SizedBox(height: 13),
                     buildRow(width, 'NAME'),
-                    const SizedBox(
-                      height: 5,
-                    ),
                     buildTextFormField(1, 'ex: Your Name Full Name',
                         TextInputType.text, width, nameCtrl, (value) {
                       if (value!.isEmpty) {
@@ -210,29 +203,21 @@ class _PersonalInfoState extends State<PersonalInfo> {
                         });
                       }
                     }),
-                    const SizedBox(height: 13),
                     text(width, 'ADDRESS'),
-                    const SizedBox(
-                      height: 5,
-                    ),
                     buildTextField(
                         2,
                         'ex: ShivDarshan Society, ParvatGam, Surat',
                         TextInputType.text,
                         width,
                         addressCtrl),
-                    const SizedBox(height: 13),
                     text(width, 'ABOUT US'),
-                    const SizedBox(height: 5),
                     buildTextField(
                         3,
                         'A Strong believer in the ability of the architecture and research of the design thinking for strengthening our societies',
                         TextInputType.text,
                         width,
                         aboutUSCtrl),
-                    const SizedBox(height: 13),
                     buildRow(width, 'CITY'),
-                    const SizedBox(height: 5),
                     buildTextFormField(
                         1, 'ex: Surat', TextInputType.text, width, cityCtrl,
                         (value) {
@@ -245,14 +230,10 @@ class _PersonalInfoState extends State<PersonalInfo> {
                         });
                       }
                     }),
-                    const SizedBox(height: 13),
                     text(width, 'NATIONALITY'),
-                    const SizedBox(height: 5),
                     buildTextField(1, 'ex: Indian', TextInputType.text, width,
                         nationalityCtrl),
-                    const SizedBox(height: 13),
                     text(width, 'GENDER'),
-                    const SizedBox(height: 5),
                     Container(
                       padding: const EdgeInsets.only(right: 12),
                       height: 64,
@@ -269,9 +250,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 13),
                     buildRow(width, 'EMAIL'),
-                    const SizedBox(height: 5),
                     buildTextFormField(1, 'ex: youremail@gmail.com',
                         TextInputType.text, width, emailCtrl, (value) {
                       bool checkCapital = false;
@@ -311,19 +290,13 @@ class _PersonalInfoState extends State<PersonalInfo> {
                         });
                       }
                     }),
-                    const SizedBox(height: 13),
                     text(width, 'YEAR OF EXPERIENCE'),
-                    const SizedBox(height: 5),
                     buildTextField(
                         1, 'ex: 6', TextInputType.text, width, experienceCtrl),
-                    const SizedBox(height: 13),
                     text(width, 'WEBSITE'),
-                    const SizedBox(height: 5),
                     buildTextField(1, 'ex: http://yourwebsite.com/',
                         TextInputType.text, width, websiteCtrl),
-                    const SizedBox(height: 13),
                     text(width, "MARITIAL STATUS"),
-                    const SizedBox(height: 5),
                     Container(
                       padding: const EdgeInsets.only(right: 12),
                       height: 64,
@@ -376,7 +349,6 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     ),
                     const SizedBox(height: 13),
                     buildRow(width, "PHONE"),
-                    const SizedBox(height: 5),
                     buildTextFormField(1, "ex: 9328871876",
                         TextInputType.number, width, phoneCtrl, (value) {
                       if (value!.isEmpty) {
@@ -403,7 +375,6 @@ class _PersonalInfoState extends State<PersonalInfo> {
                         GestureDetector(
                           onTap: () {
                             setState(() {
-                              bool response = formKey.currentState!.validate();
                               if (ckPhone &&
                                   ckEmail &&
                                   ckCity &&
