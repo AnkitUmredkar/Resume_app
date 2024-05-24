@@ -47,7 +47,7 @@ class _SocialInfoState extends State<SocialInfo> {
                   text(width,'YOUTUBE'),
                   textField('ex:Enter YouTube User Name', width, youtubeCtrl),
                   text(width,'GITHUB'),
-                  textField('ex:Enter Github User Name', width, facebookCtrl),
+                  textField('ex:Enter Github User Name', width, githubCtrl),
                   const SizedBox(height: 12),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

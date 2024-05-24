@@ -69,6 +69,7 @@ flutter:
     - assets/image/img_1.png
     - assets/image/img_2.png
     - assets/image/img_3.png
+    - assets/image/nullimg.png
     - assets/image/personal.png
     - assets/image/Categories/img_1.png
     - assets/image/Categories/img_2.png
@@ -83,6 +84,13 @@ flutter:
     - assets/image/Categories/img_11.png
     - assets/image/Categories/img_12.png
     - assets/image/Categories/img_13.png
+    - assets/image/icons/icon1.png
+    - assets/image/icons/icon2.png
+    - assets/image/icons/icon3.png
+    - assets/image/icons/icon3.png
+    - assets/image/icons/icon4.png
+    - assets/image/icons/icon5.png
+    - assets/image/Splash_Screen/img.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

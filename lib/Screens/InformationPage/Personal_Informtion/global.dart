@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../utils/global.dart';
 
-bool ckJobTitle = true,
-    ckName = true,
-    ckCity = true,
-    ckEmail = true,
-    ckPhone = true;
+bool ckPhone = true,ckEmail = true,checkEmpty = true;
 
 String birthDate = '';
 String gender = 'Male';

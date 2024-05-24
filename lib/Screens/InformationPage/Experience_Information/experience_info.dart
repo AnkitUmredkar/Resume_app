@@ -6,6 +6,7 @@ import 'package:resume_app/utils/global.dart';
 GlobalKey<FormState> formKey = GlobalKey();
 TextEditingController cmpNameCtrl = TextEditingController();
 TextEditingController jobPositionCtrl = TextEditingController();
+TextEditingController cityCtrl = TextEditingController();
 TextEditingController startDateCtrl = TextEditingController();
 TextEditingController endDateCtrl = TextEditingController();
 
@@ -136,6 +137,9 @@ class _ExperienceInfoState extends State<ExperienceInfo> {
                                         });
                                       }
                                     }),
+                                buildRow(width, 'CITY'),
+                                textField('ex:Surat', width,
+                                    expControllerList[index]['cityCtrl']),
                                 text(width, 'DATE FROM'),
                                 GestureDetector(
                                   onTap: () {
@@ -263,12 +267,14 @@ class _ExperienceInfoState extends State<ExperienceInfo> {
                     setState(() {
                       TextEditingController cmpNameCtrl = TextEditingController();
                       TextEditingController jobPositionCtrl = TextEditingController();
+                      TextEditingController cityCtrl = TextEditingController();
                       TextEditingController startDateCtrl = TextEditingController();
                       TextEditingController endDateCtrl = TextEditingController();
                       expControllerList.add(
                         {
                           'cmpNameCtrl': cmpNameCtrl,
                           'jobPositonCtrl': jobPositionCtrl,
+                          'cityCtrl': cityCtrl,
                           'startDateCtrl': startDateCtrl,
                           'endDateCtrl': endDateCtrl,
                         },
@@ -337,10 +343,4 @@ List endDateList = [
 ];
 
 List expControllerList = [
-  {
-    'cmpNameCtrl': cmpNameCtrl,
-    'jobPositonCtrl': jobPositionCtrl,
-    'startDateCtrl': startDateCtrl,
-    'endDateCtrl': endDateCtrl,
-  },
 ];

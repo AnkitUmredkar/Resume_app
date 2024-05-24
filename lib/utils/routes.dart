@@ -13,16 +13,14 @@ import 'package:resume_app/Screens/InformationPage/Skill/skill_info.dart';
 import 'package:resume_app/Screens/InformationPage/Social_Information/social_Info.dart';
 import 'package:resume_app/Screens/InformationPage/Strength_Information/strength_info.dart';
 import 'package:resume_app/Screens/InformationPage/information.dart';
-import 'package:resume_app/Screens/ViewResume/EditResume/edit_resume.dart';
-import 'package:resume_app/Screens/ViewResume/view_resume.dart';
+import 'package:resume_app/Screens/Splash_Screen/splash_screen.dart';
 import 'package:resume_app/Screens/pdf/pdf_Screen.dart';
 
 class AppRoutes {
   static Map<String, Widget Function(BuildContext)> routes = {
-    '/' : (context) => const HomePage(),
+    '/' : (context) => const SplashScreen(),
+    '/HomePage' : (context) => const HomePage(),
     '/Information' : (context) => const Information(),
-    '/ViewResume' : (context) => const ViewResume(),
-    '/EditResume' : (context) => const EditResume(),
     '/PersonalInfo' : (context) => const PersonalInfo(),
     '/ObjectiveInfo' : (context) => const ObjectiveInfo(),
     '/EducationInfo' : (context) => const EducationInfo(),

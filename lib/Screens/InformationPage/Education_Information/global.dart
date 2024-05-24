@@ -30,18 +30,11 @@ List endDateList = [
 ];
 
 List txtControllerList = [
-  {
-    'courseCtrl': courseCtrl,
-    'clgNameCtrl': clgNameCtrl,
-    'gradeCtrl': gradeCtrl,
-    'startDateCtrl': startDateCtrl,
-    'endDateCtrl': endDateCtrl,
-  },
 ];
 
 Container button(double width, String data, var icon) {
   return Container(
-    padding: const EdgeInsets.all(10),
+    padding: const EdgeInsets.fromLTRB(10,10,12,10),
     height: 55,
     width: width * 0.28,
     decoration: BoxDecoration(
@@ -58,7 +51,7 @@ Container button(double width, String data, var icon) {
           icon,
           color: Colors.white,
         ),
-        const SizedBox(width: 10),
+        SizedBox(width: width * 0.015),
         Text(
           data,
           style: const TextStyle(

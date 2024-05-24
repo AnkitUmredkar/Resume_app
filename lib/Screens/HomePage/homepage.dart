@@ -116,10 +116,7 @@ class _HomePageState extends State<HomePage> {
                     Navigator.of(context).pushNamed('/Information');
                   }
                   if(check == 2){
-                    Navigator.of(context).pushNamed('/ViewResume');
-                  }
-                  if(check == 3){
-                    Navigator.of(context).pushNamed('/EditResume');
+                    Navigator.of(context).pushNamed('/pdf');
                   }
                 },
                 child: Text(

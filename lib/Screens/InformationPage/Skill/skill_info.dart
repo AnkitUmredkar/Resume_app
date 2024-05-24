@@ -99,6 +99,21 @@ class _SkillInfoState extends State<SkillInfo> {
                                   buildRow(width, 'NAME'),
                                   textField('ex:Python', width,
                                       skillCtrlList[index]),
+                                  buildRow(width, 'SCORE'),
+                                  const SizedBox(height: 5),
+                                  Slider(
+                                    activeColor: Colors.blue,
+                                    inactiveColor: Colors.blue.shade100,
+                                    max: 100,
+                                    label: SliderRange[index].toInt().toString(),
+                                    divisions: 10,
+                                    value: SliderRange[index],
+                                    onChanged: (double value){
+                                      setState(() {
+                                        SliderRange[index] = value;
+                                      });
+                                    },
+                                  ),
                                 ],
                               ),
                             ),
@@ -116,6 +131,8 @@ class _SkillInfoState extends State<SkillInfo> {
                   setState(() {
                     TextEditingController skillCtrl = TextEditingController();
                     skillCtrlList.add(skillCtrl);
+                    double slider = 0;
+                    SliderRange.add(slider.toDouble());
                   });
                 },
                 child: button(width, 'Add', Icons.add)),
@@ -159,3 +176,5 @@ class _SkillInfoState extends State<SkillInfo> {
 
 List skillCtrlList = [];
 bool checkSkill = false;
+double slider = 0;
+List SliderRange = [slider.toDouble()];
