@@ -50,7 +50,7 @@
 
 <div align="center">
   <img height="550" align="left" src="https://github.com/AnkitUmredkar/Resume_app/assets/149374001/4e58182d-061c-4f3e-93b7-c0895045ba0b"/>
-  <img height="550" src="https://github.com/AnkitUmredkar/Resume_app/assets/149374001/b49914c0-9905-4315-adbb-75b333b3a557"/>
+  <img height="550" src="https://github.com/AnkitUmredkar/Resume_app/assets/149374001/15094369-e9ec-4ae2-930f-4bcad4376e1f"/>
   <img height="550"  align="right" src="https://github.com/AnkitUmredkar/Resume_app/assets/149374001/ccca3104-d852-4e50-9419-d081f8e48cb2"/>
 </div>
 
@@ -62,6 +62,8 @@
 
 <div align="center">
 <img height="550" src="https://github.com/AnkitUmredkar/Resume_app/assets/149374001/a51abc64-5d09-4b34-b693-9683c78a521b"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img height="550" src="https://github.com/AnkitUmredkar/Resume_app/assets/149374001/2b0727b8-602f-45d8-ae8c-d09dfefb1eed"/>
 </div>
 
 ###
@@ -71,8 +73,9 @@
 ###
 
 <div align="center">
-<video height="550" src="https://github.com/AnkitUmredkar/Resume_app/assets/149374001/8de29aed-6a77-4bf1-a8bf-202c811f59fa"/>
+<video height="550" src="https://github.com/AnkitUmredkar/Resume_app/assets/149374001/b36fc31f-5f68-49e6-ada3-3599898bf8bd"/>
 </div>
+
 
 ###
 
