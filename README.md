@@ -1,4 +1,4 @@
-<h1 align="center"> 🔶🔸 Resume Builder 🔸🔶 </h1>
+<h1 align="center"> 🔶🔸 Resume Builder App🔸🔶 </h1>
 
 <div align="center">
   <img height="550" align="left" src="https://github.com/AnkitUmredkar/Resume_app/assets/149374001/0e3d1e32-663e-421b-b66d-431daa18884c"/>
