@@ -64,8 +64,14 @@
 <img height="550" src="https://github.com/AnkitUmredkar/Resume_app/assets/149374001/a51abc64-5d09-4b34-b693-9683c78a521b"/>
 </div>
 
-<div align = "center">
-<a  href="https://github.com/AnkitUmredkar/Resume_app/tree/master/lib">-> 📂 Go To Dart File 📂<-</a>
+###
+
+<h1 align="left"> </h1>
+
+###
+
+<div align="center">
+<video height="550" src="https://github.com/AnkitUmredkar/Resume_app/assets/149374001/8de29aed-6a77-4bf1-a8bf-202c811f59fa"/>
 </div>
 
 ###
@@ -73,3 +79,8 @@
 <h1 align="left"> </h1>
 
 ###
+
+<div align = "center">
+<a  href="https://github.com/AnkitUmredkar/Resume_app/tree/master/lib">-> 📂 Go To Dart File 📂<-</a>
+</div>
+
