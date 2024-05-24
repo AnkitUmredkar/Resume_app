@@ -42,7 +42,7 @@ class _ProjectInfoState extends State<ProjectInfo> {
                         ),
                         child: ListTile(
                             leading: Text(
-                              'Education ${index + 1}',
+                              'Project  ${index + 1}',
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 22,

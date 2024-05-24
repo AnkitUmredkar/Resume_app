@@ -65,7 +65,7 @@ Future<Uint8List> generatePdf() async {
                   style: pw.TextStyle(
                       color: PdfColors.white,
                       fontWeight: pw.FontWeight.bold,
-                      fontSize: 21),
+                      fontSize: 20),
                 ),
                 pw.SizedBox(height: 5),
                 pw.Row(
@@ -194,7 +194,7 @@ Future<Uint8List> generatePdf() async {
                   style: pw.TextStyle(
                       color: PdfColors.white,
                       fontWeight: pw.FontWeight.bold,
-                      fontSize: 21),
+                      fontSize: 20),
                 ),
                 pw.SizedBox(height: 2),
                 ...List.generate(
@@ -227,7 +227,7 @@ Future<Uint8List> generatePdf() async {
                   style: pw.TextStyle(
                       color: PdfColors.white,
                       fontWeight: pw.FontWeight.bold,
-                      fontSize: 21),
+                      fontSize: 20),
                 ),
                 pw.SizedBox(height: 2),
                 ...List.generate(
@@ -250,7 +250,7 @@ Future<Uint8List> generatePdf() async {
                   style: pw.TextStyle(
                       color: PdfColors.white,
                       fontWeight: pw.FontWeight.bold,
-                      fontSize: 21),
+                      fontSize: 20),
                 ),
                 pw.SizedBox(height: 2),
                 ...List.generate(
@@ -273,7 +273,7 @@ Future<Uint8List> generatePdf() async {
                   style: pw.TextStyle(
                       color: PdfColors.white,
                       fontWeight: pw.FontWeight.bold,
-                      fontSize: 21),
+                      fontSize: 20),
                 ),
                 pw.SizedBox(height: 2),
                 ...List.generate(
@@ -353,7 +353,7 @@ Future<Uint8List> generatePdf() async {
                     style: pw.TextStyle(
                         color: const PdfColor.fromInt(0xff181818),
                         fontWeight: pw.FontWeight.bold,
-                        fontSize: 21),
+                        fontSize: 20),
                   ),
                   pw.SizedBox(height: 6),
                   pw.Text(
@@ -372,7 +372,7 @@ Future<Uint8List> generatePdf() async {
                     style: pw.TextStyle(
                         color: const PdfColor.fromInt(0xff181818),
                         fontWeight: pw.FontWeight.bold,
-                        fontSize: 21),
+                        fontSize: 20),
                   ),
                   pw.SizedBox(height: 7),
                   pw.Row(
@@ -452,7 +452,7 @@ Future<Uint8List> generatePdf() async {
                     style: pw.TextStyle(
                         color: const PdfColor.fromInt(0xff181818),
                         fontWeight: pw.FontWeight.bold,
-                        fontSize: 21),
+                        fontSize: 20),
                   ),
                   pw.SizedBox(height: 6),
                   pw.Row(
@@ -532,7 +532,7 @@ Future<Uint8List> generatePdf() async {
                     style: pw.TextStyle(
                         color: const PdfColor.fromInt(0xff181818),
                         fontWeight: pw.FontWeight.bold,
-                        fontSize: 21),
+                        fontSize: 20),
                   ),
                   pw.SizedBox(height: 6),
                   // todo
