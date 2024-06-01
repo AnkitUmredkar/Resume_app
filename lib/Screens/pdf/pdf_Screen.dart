@@ -190,7 +190,7 @@ Future<Uint8List> generatePdf() async {
                   thickness: 2,
                 ),
                 pw.Text(
-                  'SKILLS :',
+                  'SKILLS',
                   style: pw.TextStyle(
                       color: PdfColors.white,
                       fontWeight: pw.FontWeight.bold,
@@ -210,7 +210,7 @@ Future<Uint8List> generatePdf() async {
                               color: PdfColors.white, fontSize: 16),
                         ),
                         pw.Text(
-                          '${SliderRange[index]}% ',
+                          '${SliderRange[index].toInt()}% ',
                           style: const pw.TextStyle(
                               color: PdfColors.white, fontSize: 16),
                         ),
@@ -613,7 +613,7 @@ Future<Uint8List> generatePdf() async {
                     style: pw.TextStyle(
                         color: const PdfColor.fromInt(0xff181818),
                         fontWeight: pw.FontWeight.bold,
-                        fontSize: 21),
+                        fontSize: 20),
                   ),
                   pw.SizedBox(height: 6),
                   pw.Row(
